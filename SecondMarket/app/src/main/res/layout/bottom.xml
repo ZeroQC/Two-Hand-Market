@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:background="#e9eaed">
+
+    <LinearLayout
+        android:id="@+id/mainview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:id="@+id/mainview_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:src="@drawable/homepage_true"
+            android:background="#00000000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="主页"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sort"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:id="@+id/sort_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/type_fase"
+            android:background="#00000000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分类"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/me"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:id="@+id/me_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/mine_fase"
+            android:background="#00000000"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="个人中心"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
