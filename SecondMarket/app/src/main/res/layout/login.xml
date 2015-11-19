@@ -18,9 +18,9 @@
         android:ems="10"
         android:id="@+id/editText"
         android:layout_weight="1"
+        android:layout_marginTop="40dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="78dp" />
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
         android:textSize="25dp"
         android:hint="密码"
         android:id="@+id/editText2"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="46dp"
         android:layout_below="@+id/editText"
         android:layout_alignLeft="@+id/editText"
         android:layout_alignStart="@+id/editText" />

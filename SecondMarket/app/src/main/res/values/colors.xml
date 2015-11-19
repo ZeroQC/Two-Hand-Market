@@ -7,4 +7,5 @@
     <color name="black">#80000000</color>
     <color name="bottomback">#000000</color>
     <color name="textcolor">#807c7c</color>
+    <color name="addbackground">#f2f5f7</color>
 </resources>
