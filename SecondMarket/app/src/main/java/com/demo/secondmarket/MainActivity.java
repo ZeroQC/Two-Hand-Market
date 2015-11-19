@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -15,17 +14,28 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     private LinearLayout mMainView;
     private LinearLayout mSort;
+    private LinearLayout mAdd;
+    private LinearLayout mFind;
     private LinearLayout mMe;
 
     private ImageButton mMainView_img;
     private ImageButton mSort_img;
+    private ImageButton mAdd_img;
+    private ImageButton mFind_img;
     private ImageButton mMe_img;
 
     private Fragment mMainViewFragment;
     private Fragment mSortFragment;
+    private Fragment mAddFragment;
+    private Fragment mFindFragment;
     private Fragment mMeFragment;
 
     private TextView titleText;
+    private TextView mMainView_tv;
+    private TextView mSort_tv;
+    private TextView mFind_tv;
+    private TextView mMe_tv;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,20 +54,34 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private void initevent() {
         mMainView.setOnClickListener(this);
         mSort.setOnClickListener(this);
+        mAdd.setOnClickListener(this);
+        mFind.setOnClickListener(this);
         mMe.setOnClickListener(this);
+
         mMainView_img.setOnClickListener(this);
         mSort_img.setOnClickListener(this);
+        mAdd_img.setOnClickListener(this);
+        mFind_img.setOnClickListener(this);
         mMe_img.setOnClickListener(this);
     }
 
     private void initview() {
         mMainView = (LinearLayout) findViewById(R.id.mainview);
         mSort = (LinearLayout) findViewById(R.id.sort);
+        mAdd = (LinearLayout) findViewById(R.id.add);
+        mFind = (LinearLayout) findViewById(R.id.find);
         mMe = (LinearLayout) findViewById(R.id.me);
 
         mMainView_img = (ImageButton) findViewById(R.id.mainview_img);
         mSort_img = (ImageButton) findViewById(R.id.sort_img);
+        mAdd_img = (ImageButton) findViewById(R.id.add_img);
+        mFind_img = (ImageButton) findViewById(R.id.find_img);
         mMe_img = (ImageButton) findViewById(R.id.me_img);
+
+        mMainView_tv= (TextView) findViewById(R.id.mainview_tv);
+        mSort_tv= (TextView) findViewById(R.id.sort_tv);
+        mFind_tv= (TextView) findViewById(R.id.find_tv);
+        mMe_tv= (TextView) findViewById(R.id.me_tv);
 
 //        mMainViewFragment = new MainViewFragment();
 //        mSortFragment = new SortFragment();
@@ -80,9 +104,17 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             case R.id.sort_img:
                 setSelect(1);
                 break;
+            case R.id.add:
+            case R.id.add_img:
+                setSelect(2);
+                break;
+            case R.id.find:
+            case R.id.find_img:
+                setSelect(3);
+                break;
             case R.id.me:
             case R.id.me_img:
-                setSelect(2);
+                setSelect(4);
                 break;
 
         }
@@ -104,7 +136,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 }else{
                     transaction.show(mMainViewFragment);
                 }
-                mMainView_img.setImageResource(R.drawable.homepage_true);
+                mMainView_img.setImageResource(R.drawable.icon_1_d);
+                mMainView_tv.setTextColor(getResources().getColor(R.color.blue_light));
                 titleText.setText("主页");
                 break;
 
@@ -115,18 +148,43 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 }else{
                     transaction.show(mSortFragment);
                 }
-                mSort_img.setImageResource(R.drawable.type_true);
-                titleText.setText("分类");
+                mSort_img.setImageResource(R.drawable.icon_2_d);
+                mSort_tv.setTextColor(getResources().getColor(R.color.blue_light));
+                titleText.setText("消息");
                 break;
 
             case 2:
+                if(mAddFragment == null){
+                    mAddFragment = new AddFragment();
+                    transaction.add(R.id.framecontent,mAddFragment);
+                }else{
+                    transaction.show(mAddFragment);
+                }
+                mAdd_img.setImageResource(R.drawable.icon_5);
+                titleText.setText("添加");
+                break;
+
+            case 3:
+                if(mFindFragment == null){
+                    mFindFragment = new FindFragment();
+                    transaction.add(R.id.framecontent,mFindFragment);
+                }else{
+                    transaction.show(mFindFragment);
+                }
+                mFind_img.setImageResource(R.drawable.icon_4_d);
+                mFind_tv.setTextColor(getResources().getColor(R.color.blue_light));
+                titleText.setText("查找");
+                break;
+
+            case 4:
                 if(mMeFragment == null){
                     mMeFragment = new MeFragment();
                     transaction.add(R.id.framecontent,mMeFragment);
                 }else{
                     transaction.show(mMeFragment);
                 }
-                mMe_img.setImageResource(R.drawable.mine_true);
+                mMe_img.setImageResource(R.drawable.icon_3_d);
+                mMe_tv.setTextColor(getResources().getColor(R.color.blue_light));
                 titleText.setText("个人中心");
                 break;
 
@@ -143,15 +201,27 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         if(mSortFragment!=null){
             transaction.hide(mSortFragment);
         }
+        if(mAddFragment!=null){
+            transaction.hide(mAddFragment);
+        }
+        if(mFindFragment!=null){
+            transaction.hide(mFindFragment);
+        }
         if(mMeFragment!=null){
             transaction.hide(mMeFragment);
         }
     }
 
     private void resetImgs() {
-        Log.e("MainActivity","resetImgs");
-        mMainView_img.setImageResource(R.drawable.homepage_fase);
-        mSort_img.setImageResource(R.drawable.type_fase);
-        mMe_img.setImageResource(R.drawable.mine_fase);
+        mMainView_img.setImageResource(R.drawable.icon_1_n);
+        mSort_img.setImageResource(R.drawable.icon_2_n);
+        mAdd_img.setImageResource(R.drawable.icon_5);
+        mFind_img.setImageResource(R.drawable.icon_4_n);
+        mMe_img.setImageResource(R.drawable.icon_3_n);
+
+        mMainView_tv.setTextColor(getResources().getColor(R.color.textcolor));
+        mSort_tv.setTextColor(getResources().getColor(R.color.textcolor));
+        mFind_tv.setTextColor(getResources().getColor(R.color.textcolor));
+        mMe_tv.setTextColor(getResources().getColor(R.color.textcolor));
     }
 }

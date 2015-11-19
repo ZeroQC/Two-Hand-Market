@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="55dp"
-    android:background="#e9eaed">
+    android:layout_height="50dp"
+    android:background="#e9ebef">
 
     <LinearLayout
         android:id="@+id/mainview"
@@ -15,16 +15,19 @@
 
         <ImageButton
             android:id="@+id/mainview_img"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:src="@drawable/homepage_true"
-            android:background="#00000000"
-            />
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:src="@drawable/icon_1_n"
+            android:background="#00000000"
+            android:clickable="false"
+            />
+        <TextView
+            android:id="@+id/mainview_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/textcolor"
             android:text="主页"/>
 
     </LinearLayout>
@@ -38,15 +41,65 @@
 
         <ImageButton
             android:id="@+id/sort_img"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/type_fase"
-            android:background="#00000000"
-            />
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="分类"/>
+            android:src="@drawable/icon_2_n"
+            android:layout_weight="1"
+            android:background="#00e9ebef"
+            android:clickable="false"
+            />
+        <TextView
+            android:id="@+id/sort_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/textcolor"
+            android:text="消息"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/add"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:id="@+id/add_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_5"
+            android:background="#00000000"
+            android:clickable="false"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/find"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:id="@+id/find_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_4_n"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:clickable="false"
+
+            />
+        <TextView
+            android:id="@+id/find_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/textcolor"
+            android:text="发现"/>
 
     </LinearLayout>
     <LinearLayout
@@ -59,18 +112,24 @@
 
         <ImageButton
             android:id="@+id/me_img"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/mine_fase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_3_n"
+            android:layout_weight="1"
             android:background="#00000000"
+            android:clickable="false"
 
             />
         <TextView
+            android:id="@+id/me_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/textcolor"
             android:text="个人中心"/>
 
     </LinearLayout>
+
 
 
 </LinearLayout>
