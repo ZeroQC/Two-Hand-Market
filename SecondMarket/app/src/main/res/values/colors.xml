@@ -4,8 +4,11 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="blue_light">#ef700f</color>
+    <color name="blue_light_2">#fcfcdf05</color>
     <color name="black">#80000000</color>
     <color name="bottomback">#000000</color>
     <color name="textcolor">#807c7c</color>
-    <color name="addbackground">#f2f5f7</color>
+    <color name="addbackground">#eaebec</color>
+    <color name="white">#ffffff</color>
+    <color name="item_bg">#d1e7e2</color>
 </resources>
