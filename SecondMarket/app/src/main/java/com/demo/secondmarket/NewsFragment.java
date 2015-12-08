@@ -10,14 +10,17 @@ import android.widget.Button;
 /**
  * Created by Administrator on 2015/11/16.
  */
-public class MeFragment extends Fragment {
+public class NewsFragment extends Fragment {
 
-    private Button mLogin;
-
+    private Button bt3;
+    private View MyView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View retView = inflater.inflate(R.layout.fragment_me,container,false);
-        return retView;
+        return inflater.inflate(R.layout.fragment_news, null);
+
     }
+
+
+
 
 }

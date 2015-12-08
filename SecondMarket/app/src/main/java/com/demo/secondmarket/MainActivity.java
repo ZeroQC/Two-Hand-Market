@@ -86,7 +86,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
 
 //        mMainViewFragment = new MainViewFragment();
-//        mSortFragment = new SortFragment();
+//        mSortFragment = new NewsFragment();
 //        mMeFragment = new MeFragment();
 
         titleText = (TextView) findViewById(R.id.titleText);
@@ -145,7 +145,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
             case 1:
                 if(mSortFragment == null){
-                    mSortFragment = new SortFragment();
+                    mSortFragment = new NewsFragment();
                     transaction.add(R.id.framecontent,mSortFragment);
                 }else{
                     transaction.show(mSortFragment);
