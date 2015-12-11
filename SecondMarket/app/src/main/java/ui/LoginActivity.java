@@ -36,7 +36,7 @@ public class LoginActivity extends Activity {
     private Button btregister;
     private Button btlogin;
 
-//添加图片设置的变量
+    //添加图片设置的变量
     private Button btn1;
     private final String IMAGE_TYPE = "image/*";
     private final int IMAGE_CODE = 0;
@@ -83,7 +83,7 @@ public class LoginActivity extends Activity {
         });
         btlogin.setOnClickListener(new LoginListener());
 
-    //从SharePerferences中读取用户的账号和密码
+        //从SharePerferences中读取用户的账号和密码
         checkIfRemember();
     }
 
@@ -143,34 +143,34 @@ public class LoginActivity extends Activity {
         }
 
 
-    //判断账号密码是否正确
+        //判断账号密码是否正确
         public Boolean isUserinfo(String name, String pwd) {
-        try{
-            String str="select * from tb_user where name=? and password=?";
-            Cursor cursor = db.rawQuery(str, new String []{name,pwd});
-            if(cursor.getCount()<=0){
-                new AlertDialog.Builder(LoginActivity.this).setTitle("错误")
-                        .setMessage("帐号或密码错误！").setPositiveButton("确定", null)
-                        .show();
-                return false;
-            }
-            else{
-                new AlertDialog.Builder(LoginActivity.this).setTitle("正确")
-                        .setMessage("成功登录").setPositiveButton("确定", null)
-                        .show();
-                Intent intent = new Intent();
-                intent.setClass(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                return true;
-            }
+            try{
+                String str="select * from tb_user where name=? and password=?";
+                Cursor cursor = db.rawQuery(str, new String []{name,pwd});
+                if(cursor.getCount()<=0){
+                    new AlertDialog.Builder(LoginActivity.this).setTitle("错误")
+                            .setMessage("帐号或密码错误！").setPositiveButton("确定", null)
+                            .show();
+                    return false;
+                }
+                else{
+                    new AlertDialog.Builder(LoginActivity.this).setTitle("正确")
+                            .setMessage("成功登录").setPositiveButton("确定", null)
+                            .show();
+                    Intent intent = new Intent();
+                    intent.setClass(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
 
-        }catch(SQLiteException e){
-            createDb();
+            }catch(SQLiteException e){
+                createDb();
+            }
+            return false;
         }
-        return false;
-    }
 
-}
+    }
     //建立数据库
     public void createDb() {
         db.execSQL("create table tb_user( name varchar(30) primary key,password varchar(30))");
