@@ -8,11 +8,11 @@
     >
 
 
-
     <LinearLayout
+        android:layout_weight="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         android:background="@color/addbackground"
         android:layout_marginTop="10dp">
 
@@ -34,9 +34,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_weight="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:background="@color/addbackground">
 
@@ -58,9 +59,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_weight="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         android:background="@color/addbackground"
         android:layout_marginTop="5dp">
 
@@ -82,9 +84,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_weight="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         android:background="@color/addbackground"
         android:layout_marginTop="5dp">
 
@@ -106,9 +109,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_weight="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:background="@color/addbackground">
 
@@ -130,9 +134,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_weight="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:background="@color/addbackground">
 
@@ -160,6 +165,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_weight="0.5"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -229,5 +235,12 @@
         android:textSize="25sp"
         android:background="@drawable/bt_selecter"
         android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+    </LinearLayout>
 
 </LinearLayout>

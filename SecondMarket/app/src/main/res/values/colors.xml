@@ -11,4 +11,9 @@
     <color name="addbackground">#eaebec</color>
     <color name="white">#ffffff</color>
     <color name="item_bg">#d1e7e2</color>
+    <color name="transparent">#00000000</color>
+    <color name="background">#F7F4F0</color>
+    <color name="title_color">#333333</color>
+    <color name="loginbutton">#F0EADA</color>
+    <color name="grey">#3D3D3D</color>
 </resources>
