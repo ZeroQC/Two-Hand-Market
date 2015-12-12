@@ -41,7 +41,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //      requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.content_main);
+        setContentView(R.layout.login);
 
         //初始化
         initview();
